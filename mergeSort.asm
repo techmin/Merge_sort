@@ -22,13 +22,6 @@ main:
 	syscall
 	move $t7,$v0 #length
 	li $t0,0#this will be the counter to get the inputs stor in $t1
-		
-#	sll $s6,$t5,2 #  allocating space for the dynamic array 
-#	li $v0,9
-#	li $a0,128 # inputs given will not exceed 32 integers so, 9the pointer has preset the space of 128 byte (32x4) a
-#	syscall	
-#	sw $v0,p
-#	lw $t1,p
 	li $t1,0
 	
 input: 	
@@ -37,7 +30,6 @@ input:
 	syscall
 	li $v0,5
 	syscall
-#	move $t2,$v0 
 	sw $v0,temp($t1)  #stores the unout in a dynamic heap 
 	addi $t1,$t1,4
 	addi $t0,$t0,1
